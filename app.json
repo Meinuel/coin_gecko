@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "coin_gecko",
+    "slug": "coin_gecko",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "coin_gecko"
+}
