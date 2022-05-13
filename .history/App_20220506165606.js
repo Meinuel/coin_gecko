@@ -20,14 +20,14 @@ export default function App() {
 
   const handleCoins = (arr , filter) => {
     const coins = arr && arr.slice(0,20)
-    const coinOrder = coins.sort((a,b) => (b[filter] - a[filter]))
+    const coinOrder = coins.sort((a,b) => (a[filter] - b[filter]))
     setCoins(coinOrder)
   }
 
   return (
     <View style={styles.container}>
       {!hasError ? 
-        coins ? <ListContainer coins={coins} handleCoins={handleCoins}/> : <Text>Loading</Text> :
+        coins ? <ListContainer coins={coins} callback={handleCoins}/> : <Text>Loading</Text> :
         <CoinButton title="Reintentar" callback={fetchCoins} />}
       <StatusBar style="auto" />
     </View>
@@ -37,6 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

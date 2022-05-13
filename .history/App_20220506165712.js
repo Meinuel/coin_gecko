@@ -27,7 +27,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {!hasError ? 
-        coins ? <ListContainer coins={coins} handleCoins={handleCoins}/> : <Text>Loading</Text> :
+        coins ? <ListContainer coins={coins} callback={handleCoins}/> : <Text>Loading</Text> :
         <CoinButton title="Reintentar" callback={fetchCoins} />}
       <StatusBar style="auto" />
     </View>
@@ -37,6 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
